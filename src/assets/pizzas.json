@@ -1,0 +1,102 @@
+[
+  {
+    "id": 0,
+    "imageUrl": "https://i.imgur.com/gmR4vZt.jpg",
+    "title": "Pepperoni Fresh with pepper",
+    "types": [0, 1],
+    "sizes": [10, 12, 14],
+    "price": 15,
+    "category": 5,
+    "rating": 4
+  },
+  {
+    "id": 1,
+    "imageUrl": "https://i.imgur.com/xC8V65N.jpg",
+    "title": "Cheese Pizza",
+    "types": [0],
+    "sizes": [10, 14],
+    "price": 13.75,
+    "category": 3,
+    "rating": 6
+  },
+  {
+    "id": 2,
+    "imageUrl": "https://i.imgur.com/CE4ORUl.jpg",
+    "title": "BBQ Chicken",
+    "types": [0],
+    "sizes": [10, 14],
+    "price": 15,
+    "category": 2,
+    "rating": 4
+  },
+  {
+    "id": 3,
+    "imageUrl": "https://i.imgur.com/FTrOemT.jpg",
+    "title": "Sweet and sour chicken",
+    "types": [1],
+    "sizes": [10, 12, 14],
+    "price": 14,
+    "category": 0,
+    "rating": 2
+  },
+  {
+    "id": 4,
+    "imageUrl": "https://i.imgur.com/dPa9o14.jpg",
+    "title": "Cheeseburger Pizza",
+    "types": [0, 1],
+    "sizes": [10, 12, 14],
+    "price": 15,
+    "category": 1,
+    "rating": 8
+  },
+  {
+    "id": 5,
+    "imageUrl": "https://i.imgur.com/KBA0iAJ.jpg",
+    "title": "Crazy Pepperoni",
+    "types": [0],
+    "sizes": [12, 14],
+    "price": 14.75,
+    "category": 2,
+    "rating": 2
+  },
+  {
+    "id": 6,
+    "imageUrl": "https://i.imgur.com/DI2Qslr.jpg",
+    "title": "Pepperoni",
+    "types": [0, 1],
+    "sizes": [10, 12, 14],
+    "price": 14.75,
+    "category": 2,
+    "rating": 9
+  },
+  {
+    "id": 7,
+    "imageUrl": "https://i.imgur.com/7Th1NNF.jpg",
+    "title": "Margarita",
+    "types": [0, 1],
+    "sizes": [10, 12, 14],
+    "price": 15,
+    "category": 4,
+    "rating": 10
+  },
+  {
+    "id": 8,
+    "imageUrl": "https://i.imgur.com/ciaZvQL.jpg",
+    "title": "Four Seasons",
+    "types": [0, 1],
+    "sizes": [10, 12, 14],
+    "price": 15,
+    "category": 5,
+    "rating": 10
+  },
+  {
+    "id": 9,
+    "imageUrl": "https://i.imgur.com/FfNvg9B.jpg",
+    "title": "Vegetables and mushrooms 🌱",
+    "types": [0, 1],
+    "sizes": [10, 12, 14],
+    "price": 14.75,
+    "category": 1,
+    "rating": 7
+  }
+]
