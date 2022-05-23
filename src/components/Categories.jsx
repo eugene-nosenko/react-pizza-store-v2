@@ -17,7 +17,7 @@ export const Categories = () => {
             className={activeCategory === index ? 'active' : false}
             key={index}
           >
-            <span>{category}</span>
+            {category}
           </li>
         ))}
       </ul>
