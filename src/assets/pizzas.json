@@ -15,7 +15,7 @@
     "title": "Cheese Pizza",
     "types": [0],
     "sizes": [10, 14],
-    "price": 13.75,
+    "price": 13,
     "category": 3,
     "rating": 6
   },
@@ -55,7 +55,7 @@
     "title": "Crazy Pepperoni",
     "types": [0],
     "sizes": [12, 14],
-    "price": 14.75,
+    "price": 14,
     "category": 2,
     "rating": 2
   },
@@ -65,7 +65,7 @@
     "title": "Pepperoni",
     "types": [0, 1],
     "sizes": [10, 12, 14],
-    "price": 14.75,
+    "price": 14,
     "category": 2,
     "rating": 9
   },
@@ -95,7 +95,7 @@
     "title": "Vegetables and mushrooms 🌱",
     "types": [0, 1],
     "sizes": [10, 12, 14],
-    "price": 14.75,
+    "price": 14,
     "category": 1,
     "rating": 7
   }
