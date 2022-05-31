@@ -8,7 +8,6 @@ export const Sort = ({ sortType, onChangeSort }) => {
     { id: 'title', name: 'title' }
   ];
 
-  console.log(sortType);
   const onClickSortPopup = (index) => {
     onChangeSort(index);
     setOpen(!open);
