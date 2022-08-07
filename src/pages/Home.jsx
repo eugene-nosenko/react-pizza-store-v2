@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { SearchContext } from '../App';
 import { Categories } from '../components/Categories';
 import { Pagination } from '../components/Pagination';
 import { PizzaBlock } from '../components/PizzaBlock';
@@ -7,7 +7,8 @@ import { Skeleton } from '../components/PizzaBlock/Skeleton';
 import { Sort } from '../components/Sort';
 import { itemsPerPage } from '../constants';
 
-export const Home = ({ searchValue }) => {
+export const Home = () => {
+  const { searchValue } = React.useContext(SearchContext);
   const [pizzas, setPizzas] = React.useState([]);
   const [isLoading, setIsLoading] = React.useState(true);
   const [currentPage, setCurrentPage] = React.useState(1);
