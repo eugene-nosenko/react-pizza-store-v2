@@ -2,6 +2,7 @@ import React from 'react';
 
 export const Sort = ({ sortType, onChangeSort }) => {
   const [open, setOpen] = React.useState(false);
+
   const list = [
     { id: 'rating', name: 'rating' },
     { id: 'price', name: 'price' },

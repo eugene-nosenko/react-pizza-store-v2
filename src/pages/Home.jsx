@@ -33,7 +33,12 @@ export const Home = ({ searchValue }) => {
 
   const skeletonArray = [...new Array(6)].map((_, index) => <Skeleton key={index} />);
   const pizzasArray = pizzas
-    // .filter((item) => item.title.toLowerCase().includes('Pizza'.toLowerCase()))
+    // .filter((obj) => {
+    //   if (obj.title.toLowerCase().includes(searchValue.toLowerCase())) {
+    //     return true;
+    //   }
+    //   return false;
+    // })
     .map((obj, index) => <PizzaBlock key={index} {...obj} />);
 
   return (

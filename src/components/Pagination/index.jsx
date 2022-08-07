@@ -11,7 +11,7 @@ import { itemsPerPage } from '../../constants';
 
 export const Pagination = ({ onChangePage }) => {
   return (
-    <div>
+    <div style={{ paddingBottom: '50px' }}>
       <ReactPaginate
         className={style.root}
         breakLabel="..."
