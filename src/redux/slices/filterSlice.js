@@ -10,16 +10,15 @@ export const filterSlice = createSlice({
   initialState,
   reducers: {
     setCategoryId(state, action) {
-      console.log('action', action);
       state.categoryId = action.payload;
     },
-    decrement: (state) => {
-      state.value -= 1;
+    setSort(state, action) {
+      state.sort = action.payload;
     }
   }
 });
 
 // Action creators are generated for each case reducer function
-export const { setCategoryId, decrement } = filterSlice.actions;
+export const { setCategoryId, setSort } = filterSlice.actions;
 
 export default filterSlice.reducer;

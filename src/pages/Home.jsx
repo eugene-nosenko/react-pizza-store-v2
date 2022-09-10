@@ -12,25 +12,19 @@ import { itemsPerPage } from '../constants';
 
 export const Home = () => {
   const dispatch = useDispatch();
-  const categoryId = useSelector((state) => state.filter.categoryId);
-  console.log('categoryId', categoryId);
+  const { categoryId, sort } = useSelector((state) => state.filter);
 
   const { searchValue } = React.useContext(SearchContext);
   const [pizzas, setPizzas] = React.useState([]);
   const [isLoading, setIsLoading] = React.useState(true);
   const [currentPage, setCurrentPage] = React.useState(1);
-  // const [categoryId, setCategoryId] = React.useState(0);
-  const [sortType, setSortType] = React.useState({
-    id: 'popularity',
-    name: 'popularity'
-  });
 
   const onChangeCategory = (id) => {
     dispatch(setCategoryId(id));
   };
 
   const category = categoryId > 0 ? `category=${categoryId}` : '';
-  const sortBy = sortType.id;
+  const sortBy = sort.id;
   const search = searchValue ? `&search=${searchValue}` : '';
 
   React.useEffect(() => {
@@ -61,7 +55,7 @@ export const Home = () => {
       <div className="container">
         <div className="content__top">
           <Categories categoryId={categoryId} onChangeCategory={onChangeCategory} />
-          <Sort sortType={sortType} onChangeSort={(id) => setSortType(id)} />
+          <Sort />
         </div>
         <h2 className="content__title">Pizzas</h2>
         <div className="content__items">{isLoading ? skeletonArray : pizzasArray}</div>
