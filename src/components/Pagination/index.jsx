@@ -9,7 +9,7 @@ import { itemsPerPage } from '../../constants';
 //   setItemOffset(newOffset);
 // };
 
-export const Pagination = ({ onChangePage }) => {
+export const Pagination = ({ currentPage, onChangePage }) => {
   return (
     <div style={{ paddingBottom: '50px' }}>
       <ReactPaginate
@@ -20,6 +20,7 @@ export const Pagination = ({ onChangePage }) => {
         onPageChange={(e) => onChangePage(e.selected + 1)}
         pageRangeDisplayed={itemsPerPage}
         pageCount={2}
+        forcePage={currentPage - 1}
         renderOnZeroPageCount={null}
       />
     </div>
