@@ -1,7 +1,8 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { setCategoryId } from '../redux/slices/filterSlice';
+import axios from 'axios';
 
+import { setCategoryId } from '../redux/slices/filterSlice';
 import { SearchContext } from '../App';
 import { Categories } from '../components/Categories';
 import { Pagination } from '../components/Pagination';
@@ -29,14 +30,16 @@ export const Home = () => {
 
   React.useEffect(() => {
     setIsLoading(true);
-    fetch(
-      `https://629146cd665ea71fe1436b03.mockapi.io/items?page=${currentPage}&limit=${itemsPerPage}&${category}&sortBy=${sortBy}&order=desc${search}`
-    )
-      .then((res) => res.json())
-      .then((json) => {
-        setPizzas(json);
+
+    axios
+      .get(
+        `https://629146cd665ea71fe1436b03.mockapi.io/items?page=${currentPage}&limit=${itemsPerPage}&${category}&sortBy=${sortBy}&order=desc${search}`
+      )
+      .then((res) => {
+        setPizzas(res.data);
         setIsLoading(false);
       });
+
     window.scrollTo(0, 0);
   }, [category, sortBy, search, currentPage]);
 
