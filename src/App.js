@@ -7,10 +7,8 @@ import { Cart } from './pages/Cart';
 import { NotFound } from './pages/NotFound';
 
 import './scss/app.scss';
-// import pizzas from './assets/pizzas.json';
 
 function App() {
-  const [searchValue, setSearchValue] = React.useState('');
   return (
     <div className="wrapper">
       <Header />
