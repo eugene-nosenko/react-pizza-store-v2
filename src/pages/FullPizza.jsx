@@ -1,17 +1,19 @@
 import React from 'react';
 import axios from 'axios';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 
 export const FullPizza = () => {
   const [pizza, setPizza] = React.useState({});
   const { id } = useParams();
+  const navigate = useNavigate();
 
   const fetchPizzaById = async () => {
     try {
       const { data } = await axios.get(`https://629146cd665ea71fe1436b03.mockapi.io/items/${id}`);
       setPizza(data);
     } catch (error) {
-      console.log('ERROR', error);
+      alert('Sorry, error');
+      navigate('/');
     }
   };
 
@@ -33,9 +35,7 @@ export const FullPizza = () => {
         maxWidth: '500px'
       }}
     >
-      <h2 style={{ paddingBottom: '1rem' }}>
-        {pizza.title} {pizza.price} $
-      </h2>
+      <h2 style={{ paddingBottom: '1rem' }}>{pizza.title && `${pizza.title} ${pizza.price} $`}</h2>
       <img src={pizza.imageUrl} alt={pizza.title} />
     </div>
   );
