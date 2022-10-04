@@ -4,9 +4,13 @@ import qs from 'qs';
 import { useNavigate } from 'react-router-dom';
 
 import { fetchPizzas, selectPizzaData } from '../redux/slices/pizzasSlice';
-import { selectFilter, setCategoryId, setCurrentPage, setFilters } from '../redux/slices/filterSlice';
+import {
+  selectFilter,
+  setCategoryId,
+  setCurrentPage,
+  setFilters
+} from '../redux/slices/filterSlice';
 
-import { SearchContext } from '../App';
 import { Categories } from '../components/Categories';
 import { Pagination } from '../components/Pagination';
 import { PizzaBlock } from '../components/PizzaBlock';
@@ -20,9 +24,7 @@ export const Home = () => {
   const isMounted = React.useRef(false);
 
   const { items, status } = useSelector(selectPizzaData);
-  const { categoryId, currentPage, sort } = useSelector(selectFilter);
-
-  const { searchValue } = React.useContext(SearchContext);
+  const { categoryId, currentPage, sort, searchValue } = useSelector(selectFilter);
 
   const onChangeCategory = (id) => {
     dispatch(setCategoryId(id));
