@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import qs from 'qs';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 
 import { fetchPizzas, selectPizzaData } from '../redux/slices/pizzasSlice';
 import {
@@ -81,8 +81,12 @@ export const Home = () => {
     window.scrollTo(0, 0);
   }, [categoryId, sort.id, searchValue, currentPage]);
 
+  const pizzasArray = items.map((obj, index) => (
+    <Link key={index} to={`/pizza/${obj.id}`}>
+      <PizzaBlock {...obj} />
+    </Link>
+  ));
   const skeletonArray = [...new Array(6)].map((_, index) => <Skeleton key={index} />);
-  const pizzasArray = items.map((obj, index) => <PizzaBlock key={index} {...obj} />);
 
   return (
     <>
