@@ -6,7 +6,7 @@ import { itemsPerPage } from '../../constants';
 
 type PaginationProps = {
   currentPage: number;
-  onChangePage: any;
+  onChangePage: (i: number) => void;
 };
 
 export const Pagination: React.FC<PaginationProps> = ({ currentPage, onChangePage }) => {
