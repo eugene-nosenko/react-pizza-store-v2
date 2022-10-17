@@ -46,7 +46,7 @@ export const Home: React.FC = () => {
         // order,
         category,
         search,
-        currentPage
+        currentPage: currentPage.toString()
       })
     );
   };
@@ -71,7 +71,15 @@ export const Home: React.FC = () => {
 
       const sort = sortList.find((obj) => obj.id === params.sortBy);
 
-      dispatch(setFilters({ ...params, sort }));
+      dispatch(
+        setFilters({
+          ...params,
+          sort,
+          searchValue: '',
+          categoryId: 0,
+          currentPage: 0
+        })
+      );
       isSearch.current = true;
     }
   }, []);
