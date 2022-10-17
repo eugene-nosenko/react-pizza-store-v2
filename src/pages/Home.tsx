@@ -26,9 +26,9 @@ export const Home: React.FC = () => {
   const { items, status } = useSelector(selectPizzaData);
   const { categoryId, currentPage, sort, searchValue } = useSelector(selectFilter);
 
-  const onChangeCategory = (id: number) => {
+  const onChangeCategory = React.useCallback((id: number) => {
     dispatch(setCategoryId(id));
-  };
+  }, []);
 
   const onChangePage = (number: number) => {
     dispatch(setCurrentPage(number));
@@ -46,7 +46,7 @@ export const Home: React.FC = () => {
         // order,
         category,
         search,
-        currentPage
+        currentPage: currentPage.toString()
       })
     );
   };
@@ -71,7 +71,15 @@ export const Home: React.FC = () => {
 
       const sort = sortList.find((obj) => obj.id === params.sortBy);
 
-      dispatch(setFilters({ ...params, sort }));
+      dispatch(
+        setFilters({
+          ...params,
+          sort,
+          searchValue: '',
+          categoryId: 0,
+          currentPage: 0
+        })
+      );
       isSearch.current = true;
     }
   }, []);
@@ -90,7 +98,7 @@ export const Home: React.FC = () => {
       <div className="container">
         <div className="content__top">
           <Categories categoryId={categoryId} onChangeCategory={onChangeCategory} />
-          <Sort />
+          <Sort value={sort} />
         </div>
         <h2 className="content__title">Pizzas</h2>
         {status === 'rejected' ? (
